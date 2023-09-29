@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (BuildContext bc, int idx) {
                         var cep = _cepsBack4App.results[idx];
                         return Dismissible(
-                          key: Key(cep.cep),
+                          key: Key(cep.cep!),
                           onDismissed: ((direction) {
                             _cepRepo.removeCep(cep);
                           }),

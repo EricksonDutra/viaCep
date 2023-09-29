@@ -21,18 +21,33 @@ class ViaCEPsModel {
 
 class ViaCEPModel {
   String objectId = "";
-  String cep = "";
+  String? cep = "";
   String logradouro = "";
-  String complemento = "";
-  String localidade = "";
-  String uf = "";
-  String ibge = "";
+  String? complemento = "";
+  String? localidade = "";
+  String? uf = "";
+  String? ibge = "";
   String bairro = "";
-  String createdAt = "";
-  String updatedAt = "";
+  String? createdAt = "";
+  String? updatedAt = "";
 
-  ViaCEPModel(cep, logradouro, bairro, complemento, localidade, uf, ibge, createdAt, updatedAt);
-  ViaCEPModel.criar(this.logradouro, this.localidade);
+  // ViaCEPModel(cep, logradouro, bairro, complemento, localidade, uf, ibge, createdAt, updatedAt);
+  // ViaCEPModel.criar(this.logradouro, this.localidade);
+  ViaCEPModel({
+    this.cep,
+    required this.logradouro,
+    required this.bairro,
+    this.complemento,
+    this.localidade,
+    this.uf,
+    this.ibge,
+    this.createdAt,
+    this.updatedAt,
+  });
+  ViaCEPModel.criar({
+    required this.logradouro,
+    required this.bairro,
+  });
 
   ViaCEPModel.fromJson(Map<String, dynamic> json) {
     objectId = json['objectId'];
